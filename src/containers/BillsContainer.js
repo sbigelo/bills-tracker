@@ -6,7 +6,6 @@ import Bills from '../components/Bills'
 import BillList from '../components/BillList'
 import NavBar from '../components/NavBar'
 import Home from '../components/Home'
-import BillEdit from '../components/BillEdit'
 
 class BillsContainer extends Component {
 
@@ -18,7 +17,6 @@ class BillsContainer extends Component {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/bills/:slug' render={(routerProps) => <Bills {...routerProps} bills={this.props.bills && this.props.bills} key={routerProps.id} /> } />
                     <Route exact path='/bills' render={(routerProps) => <BillList {...routerProps} bills={this.props.bills} /> } />
-                    <Route exact path='/bills/:slug/edit' render={(routerProps) => <BillEdit {...routerProps} bills={this.props.bills} /> } />
                 </Switch>
             </div>
         )
@@ -27,6 +25,8 @@ class BillsContainer extends Component {
     componentDidMount() {
         this.props.fetchBills()
     }
+
+    
 }
 
     const mapStateToProps = state => {

@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/addUser'
+import styled from "styled-components"
+
 
 class UserInput extends Component {
 
@@ -31,13 +33,13 @@ class UserInput extends Component {
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                <div>
+                <Wrap>
                 <input type="text" name="first_name" placeholder="First Name" value={this.state.first_name} onChange={this.handleOnChange}/>
-                </div>
-                <div>
+                </Wrap>
+                <Wrap>
                 <input type="text" name="last_name" placeholder="Last Name" value={this.state.last_name} onChange={this.handleOnChange}/>
-                </div>
-                <button type="submit">Add</button>
+                </Wrap>
+                <SubmitButton type="submit">Add</SubmitButton>
                 </form>
             </div>
         )
@@ -45,3 +47,41 @@ class UserInput extends Component {
 
 }
 export default connect(null, { addUser })(UserInput)
+
+
+const Wrap = styled.div`
+  border-radius: 4px; 
+  input {
+    width: 96%;
+    min-height:40px;
+    border-radius: 4px;
+    border: 1px solid #E6E6E6;
+    margin: 12px 0;
+    padding: 12px;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height:80px;
+    border-radius: 4px;
+    border: 1px solid #E6E6E6;
+    margin: 12px 0;
+    padding: 12px;    
+  }
+`
+
+const SubmitButton = styled.button`
+  color: #fff;
+  background-color: #0000FF;
+  border-radius: 4px;   
+  padding:12px 12px;  
+  border: 1px solid #0000FF;
+  width:100%;
+  font-size:18px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    background: #71b406;
+    border-color: #71b406;
+  }
+`
