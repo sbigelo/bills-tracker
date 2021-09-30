@@ -25,34 +25,53 @@
 // export default App;
 
 
-import { Component } from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Route
-// } from 'react-router-dom';
-// import Home from './components/Home'
-// import Bills from './components/Bills'
-// import SignUp from './components/SignUp'
-// import User from './components/User'
-import BillsContainer from './containers/BillsContainer';
+// import { Component } from 'react';
+// // import {
+// //   BrowserRouter as Router,
+// //   Route
+// // } from 'react-router-dom';
+// import Home from './containers/Home'
+// // import Bills from './components/Bills'
+// // import SignUp from './components/SignUp'
+// // import User from './components/User'
+// // import BillsContainer from './containers/BillsContainer';
 
+
+// class App extends Component {
+//   render() {
+//   return (
+//     // <Router>
+//     //   <div className='app'>
+//     //     <Route exact path='/' component={Home} />
+//     //     <Route path='/bills' component={Bills} />
+//     //     <Route path="/sign-up" component={SignUp} /> 
+//     //     <Route path='/user-home' component={User} />
+//     //   </div>
+//     // </Router>
+//     <div className='App'>
+//       {/* <BillsContainer /> */}
+//       <Home />
+//     </div>
+//   )
+//   }
+// }
+
+// export default App
+
+
+
+import { Component } from 'react'
+import BillsContainer from './containers/BillsContainer'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
-  return (
-    // <Router>
-    //   <div className='app'>
-    //     <Route exact path='/' component={Home} />
-    //     <Route path='/bills' component={Bills} />
-    //     <Route path="/sign-up" component={SignUp} /> 
-    //     <Route path='/user-home' component={User} />
-    //   </div>
-    // </Router>
-    <div className='App'>
-      <BillsContainer />
-    </div>
-  )
+    return (
+      <div className="App">
+        <BillsContainer />
+        <Footer />
+      </div>
+    )
   }
 }
-
 export default App

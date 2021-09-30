@@ -1,30 +1,26 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-// import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { fetchBills } from '../actions/fetchBills'
-// import Home from '../components/Home'
 import Bills from '../components/Bills'
-
-
+import BillList from '../components/BillList'
+import NavBar from '../components/NavBar'
+import Home from '../components/Home'
+import BillEdit from '../components/BillEdit'
 
 class BillsContainer extends Component {
 
-    generateBillCards = () => {
-        return this.props.bills.map(bill => <Bills key={bill.id} bill={bill}  />)
-    }
-
     render() {
-        return (
+        return(
             <div>
-                {/* <BrowserRouter>
+                <NavBar />
                 <Switch>
                     <Route exact path='/' component={Home} />
-        <Route exact path='/bills' render={(routerProps) => <Bills {...routerProps} bills={this.props.bills.map((bill, index) => <div key={index} bill={bill} ></div>)}  />} />
+                    <Route exact path='/bills/:slug' render={(routerProps) => <Bills {...routerProps} bills={this.props.bills && this.props.bills} key={routerProps.id} /> } />
+                    <Route exact path='/bills' render={(routerProps) => <BillList {...routerProps} bills={this.props.bills} /> } />
+                    <Route exact path='/bills/:slug/edit' render={(routerProps) => <BillEdit {...routerProps} bills={this.props.bills} /> } />
                 </Switch>
-                </BrowserRouter>
-             */}
-             {this.generateBillCards()}
-</div>
+            </div>
         )
     }
 
@@ -33,11 +29,12 @@ class BillsContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        bills: state.bills
+    const mapStateToProps = state => {
+        return {
+            bills: state.bills
+        }
     }
-}
+
+
 
 export default connect(mapStateToProps, { fetchBills })(BillsContainer)
-
