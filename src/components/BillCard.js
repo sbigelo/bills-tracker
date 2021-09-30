@@ -21,8 +21,7 @@ export default BillCard
 
 const LinkWrapper = styled.div`
   margin: 20px 0 20px 4;
-  height: 60px;
-  width: 50px;
+  height: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;

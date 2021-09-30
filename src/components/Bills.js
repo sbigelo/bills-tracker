@@ -16,11 +16,12 @@ const Bills = (props) => {
                     <p>Paid Status: {bill && bill.paid_status}</p>
                     <p>Notes: {bill && bill.notes}</p>
                     <UserList users={bill && bill.users}/>
-                    {bill && <BillEdit bill={bill} /> }
+                    <UsersContainer bill={bill} />
                 </Main>
             </Column>
         <Column>
-            <UsersContainer bill={bill} />
+                {bill && <BillEdit bill={bill} />}
+            
         </Column >
         </Wrap>
     )

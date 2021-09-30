@@ -4,7 +4,9 @@ import styled from "styled-components"
 const Home = () => {
     return (
         <Welcome>
-            <Header>Welcome To Bills Tracker!</Header>
+            <Header>
+                <h1>Welcome To Bills Tracker!</h1>
+            </Header>
             <p>An application that allows you to track the progress of all of your bills.</p>
             <br></br>
             <p>It also allows you to add a bill payer to the list, whether it be a roommate, significant other, or family member.</p>
@@ -30,6 +32,6 @@ body {
 const Header = styled.div`
   padding: 100px 100px 10px 100px;
   h1 {
-      font-size: 42px;
+      font-size: 45px;
   }
 `
