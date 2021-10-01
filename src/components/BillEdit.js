@@ -22,12 +22,13 @@ class BillEdit extends Component {
         event.preventDefault()
         let bill = { ...this.state, id: this.props.bill.id }
         this.props.editBill(bill)
+        console.log(bill)
         this.setState({
-            company_name: '',
-            due_date: '',
-            amount_due: '',
-            paid_status: '',
-            notes: ''
+            company_name: this.props.bill.company_name,
+            due_date: this.props.bill.due_date,
+            amount_due: this.props.bill.amount_due,
+            paid_status: this.props.bill.paid_status,
+            notes: this.props.bill.notes
         })
     }
 
@@ -69,7 +70,7 @@ export default connect(null, { editBill })(BillEdit)
 const Header = styled.div`
   text-align: center;
   font-size:30px;
-  padding: 15px 0;
+  padding: 1px 0;
   font-weight: bold;
   color: black;
 `
@@ -77,12 +78,14 @@ const Header = styled.div`
 const BillWrapper = styled.div`
   background:white;
   padding:20px;
-  margin-left: 15px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 12px;
   border-radius: 0;
   padding-bottom:80px;
-  border-left: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 10px;
   background: #f6f1f0;
   padding-right: 80px;
 `

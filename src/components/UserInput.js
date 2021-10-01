@@ -32,6 +32,7 @@ class UserInput extends Component {
     render() {
         return(
             <div>
+                <UserWrapper>
                 <form onSubmit={this.handleOnSubmit}>
                 <Wrap>
                 <input type="text" name="first_name" placeholder="First Name" value={this.state.first_name} onChange={this.handleOnChange}/>
@@ -39,14 +40,27 @@ class UserInput extends Component {
                 <Wrap>
                 <input type="text" name="last_name" placeholder="Last Name" value={this.state.last_name} onChange={this.handleOnChange}/>
                 </Wrap>
+                
                 <SubmitButton type="submit">Add</SubmitButton>
                 </form>
+                </UserWrapper>
             </div>
         )
     }
 
 }
 export default connect(null, { addUser })(UserInput)
+
+const UserWrapper = styled.div`
+  text-align: center;
+  border-radius: 4px;
+  font-size:20px;
+  padding: 40px 0 10px 0;
+  border: 1px solid #e6e6e6;
+  margin: 20px 0;
+  padding:20px;
+  background: #fff;
+`
 
 
 const Wrap = styled.div`
@@ -76,7 +90,7 @@ const SubmitButton = styled.button`
   border-radius: 4px;   
   padding:12px 12px;  
   border: 1px solid #0000FF;
-  width:100%;
+  width:102%;
   font-size:18px;
   cursor: pointer;
   transition: ease-in-out 0.2s;

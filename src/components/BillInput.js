@@ -97,7 +97,7 @@ const BillWrap = styled.div`
   margin-left: 15px;
   border-radius: 0;
   padding-bottom:80px;
-  border-left: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   height: 100vh;
   padding-top: 100px;
   background: #f6f1f0;

@@ -24,6 +24,7 @@ const Card = styled.div`
   margin: 0px 0px 20px 0px;
   position: relative;
   margin-right: 12px;
+  background: white;
 `
 const UserWrap = styled.div`
   text-align: center;

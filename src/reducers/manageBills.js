@@ -3,7 +3,6 @@ export default function manageBills(state = { bills: [] }, action) {
     switch (action.type) {
         case "FETCH_BILLS":   
             return { bills: action.payload }
-        
         case "ADD_BILL":
             return { ...state, bills: [...state.bills, action.payload]}
         
@@ -11,12 +10,12 @@ export default function manageBills(state = { bills: [] }, action) {
             let bills = state.bills.map(bill => {
                 if (bill.id === action.payload.bill_id) {
                     bill.users = [...bill.users, action.payload] 
-                    return bill.users
+                    return bill
                 } else {
                     return bill
                 }
             })
-            return { ...state, bills: [...state.bills, bills] }
+            return { ...state, bills: [ ...bills] }
 
         case 'EDIT_BILL':
             let editedBill = state.bills.map(bill => {
@@ -26,7 +25,6 @@ export default function manageBills(state = { bills: [] }, action) {
                     return bill
                 }
             })
-            console.log(editedBill)
             return { ...state, bills: editedBill }
 
         case 'DELETE_USER':           

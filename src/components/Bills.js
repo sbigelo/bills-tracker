@@ -15,13 +15,13 @@ const Bills = (props) => {
                     <p>Amount Due: {bill && bill.amount_due}</p>
                     <p>Paid Status: {bill && bill.paid_status}</p>
                     <p>Notes: {bill && bill.notes}</p>
-                    <UserList users={bill && bill.users}/>
-                    <UsersContainer bill={bill} />
+                    
+                    {bill && <BillEdit bill={bill} /> }
                 </Main>
             </Column>
         <Column>
-                {bill && <BillEdit bill={bill} />}
-            
+            <UserList users={bill && bill.users} />
+            <UsersContainer bill={bill} />
         </Column >
         </Wrap>
     )
@@ -36,7 +36,7 @@ const Wrap = styled.div`
   `
 
 const Main = styled.div`
-  padding-left: 60px;
+  padding-left: 8px;
 `
 
 const Column = styled.div`

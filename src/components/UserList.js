@@ -37,10 +37,11 @@ const UserHeader = styled.div`
   color: black;
 `
 const Grid = styled.div`
-  border-radius: 4px;
-  border: 1px solid #E6E6E6;
-  padding: 20px;
-  margin: 0px 0px 20px 0px;
+  border-radius: 1px;
+  border: 1px solid #e6e6e6;
+  padding: 5px;
+  margin: 0px 0px 5px 15px;
   position: relative;
-  margin-right: 12px;
+  margin-right: 0px;
+  background: #f6f1f0;
 `

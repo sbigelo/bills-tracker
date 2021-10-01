@@ -5,7 +5,7 @@ import styled from "styled-components"
 const UsersContainer = props => {
     return (
        <UserWrapper>
-           <UserHeadline>Add a bill paying member of your household to this bill:</UserHeadline>
+           <UserHeadline>Add a paying member of your household to this bill:</UserHeadline>
            <UserInput bill={props.bill}
                       billId={props.bill && props.bill.id}
            />
@@ -21,7 +21,7 @@ background:white;
   margin-left: 15px;
   border-radius: 0;
   padding-bottom:80px;
-  border-left: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   height: 100vh;
   padding-top: 100px;
   background: #f6f1f0;

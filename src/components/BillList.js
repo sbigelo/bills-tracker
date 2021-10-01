@@ -4,9 +4,9 @@ import BillInput from '../components/BillInput'
 import styled from "styled-components"
 
 const BillList = ({ bills }) => {
-    const card = bills.map(bill => 
-        <BillCard key={bill.id} attributes={bill}/>
-        )
+    const card = bills.map(bill => {
+        return <BillCard key={bill.id} attributes={bill} />
+    })
 
         return (
             <Wrap>
