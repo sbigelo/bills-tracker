@@ -37,7 +37,7 @@ class BillInput extends Component {
         return (
             
               
-                <BillWrap className="form-container">
+                <BillWrap >
                 <BillHeader>Create A New Bill</BillHeader>
                     <form onSubmit={this.handleOnSubmit}>
                 <FormWrap>    
@@ -70,7 +70,7 @@ export default connect(null, { addBill })(BillInput)
 const BillHeader = styled.div`
   text-align: center;
   font-size:30px;
-  padding: 15px 0;
+  padding: 1px 0px 15px;
   font-weight: bold;
   color: black;
 `
@@ -81,7 +81,7 @@ const BillButton = styled.button`
   border-radius: 4px;   
   padding:12px 12px;  
   border: 1px solid #0000FF;
-  width:100%;
+  width: 98%;
   font-size:18px;
   cursor: pointer;
   transition: ease-in-out 0.2s;
@@ -93,13 +93,15 @@ const BillButton = styled.button`
 
 const BillWrap = styled.div`
   background:white;
-  padding:20px;
+  padding-left: 20px;
   margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   border-radius: 0;
-  padding-bottom:80px;
+  padding-bottom: 0px;
   border: 1px solid rgba(0,0,0,0.1);
-  height: 100vh;
-  padding-top: 100px;
+  height: 70vh;
+  padding-top: 25px;
   background: #f6f1f0;
   padding-right: 80px;
 `
