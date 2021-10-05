@@ -1,6 +1,6 @@
 # Bills Tracker
 
-This application allows for the creating of bills that are in a single household/group. The members can create bills that need to be paid or are already paid (for record keeping). Each bill can have a bill paying member attatched to an individual bill. It is a simple way of organizing who owes what and when. 
+This application allows for the creation of bills that are in a single household/group. The members can create bills that need to be paid or are already paid (for record keeping). Each bill can have a bill paying member attached to an individual bill. It is a simple way of organizing who owes what and when.
 
 Bills Tracker is a MVP SPA React/Redux Frontend application with a Rails API backend that allows for client-server communication.
 
