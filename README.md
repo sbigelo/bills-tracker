@@ -34,5 +34,4 @@ Bills Tracker is a MVP SPA React/Redux Frontend application with a Rails API bac
 - Head to https://github.com/sbigelo/bills-tracker-backend
 - Follow instructions there.
 
-## License
 
