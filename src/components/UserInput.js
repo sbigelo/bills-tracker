@@ -17,6 +17,7 @@ class UserInput extends Component {
             [event.target.name]: event.target.value,
             bill_id: this.props.billId
         })
+        console.log('1')
     }
 
     handleOnSubmit = (event) => {
@@ -60,6 +61,7 @@ const UserWrapper = styled.div`
   margin: 20px 0;
   padding:20px;
   background: #fff;
+  
 `
 
 

@@ -9,11 +9,10 @@ export const addUser = (data) => {
         })
             .then(resp => resp.json())
             .then(datas => {
-                if (datas.error) {
-                    alert(datas.error)
-                } else {
                     dispatch({ type: "ADD_USER", payload: datas })
-                }
+            })
+            .catch((err) => {
+                console.log(err);
             })
     }
 }

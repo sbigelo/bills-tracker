@@ -20,10 +20,10 @@ background:white;
   padding:20px;
   margin-left: 15px;
   border-radius: 0;
-  padding-bottom:80px;
+  padding-bottom:30px;
   border: 1px solid rgba(0,0,0,0.1);
-  height: 100vh;
-  padding-top: 100px;
+  height: 38vh;
+  padding-top: 30px;
   background: #f6f1f0;
   padding-right: 80px;
 `

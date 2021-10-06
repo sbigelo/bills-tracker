@@ -3,7 +3,6 @@ import UsersContainer from '../containers/UsersContainer'
 import UserList from './UserList'
 import BillEdit from './BillEdit'
 import styled from "styled-components"
-// import Footer from './Footer'
 
 const Bills = (props) => {
     let bill = props.bills.filter(bill => bill.slug === props.match.params.slug)[0]
@@ -24,13 +23,12 @@ const Bills = (props) => {
             <UserList users={bill && bill.users} />
             <UsersContainer bill={bill} />
         </Column >
-            {/* <Footer /> */}
         </Wrap>
     )
-
 }
 
 export default Bills
+
 
 const Wrap = styled.div`
   margin-left: auto;

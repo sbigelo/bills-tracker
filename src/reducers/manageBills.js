@@ -15,6 +15,7 @@ export default function manageBills(state = { bills: [] }, action) {
                     return bill
                 }
             })
+
             return { ...state, bills: [ ...bills] }
 
         case 'EDIT_BILL':

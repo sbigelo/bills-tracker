@@ -22,7 +22,6 @@ class BillEdit extends Component {
         event.preventDefault()
         let bill = { ...this.state, id: this.props.bill.id }
         this.props.editBill(bill)
-        console.log(bill)
         this.setState({
             company_name: this.props.bill.company_name,
             due_date: this.props.bill.due_date,
@@ -84,7 +83,7 @@ const BillWrapper = styled.div`
   border-radius: 0;
   padding-bottom:80px;
   border: 1px solid rgba(0,0,0,0.1);
-  height: 100vh;
+  height: 56vh;
   padding-top: 10px;
   background: #f6f1f0;
   padding-right: 80px;
@@ -95,6 +94,7 @@ const Wrap = styled.div`
   input {
     width: 96%;
     min-height:40px;
+    height: ;
     border-radius: 4px;
     border: 1px solid #E6E6E6;
     margin: 12px 0;
