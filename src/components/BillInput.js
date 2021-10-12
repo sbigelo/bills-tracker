@@ -9,14 +9,12 @@ class BillInput extends Component {
         due_date: '',
         amount_due: '',
         notes: '',
-        paid_status: '',
-        id: 0
+        paid_status: ''
     }
 
     handleOnChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value,
-            id: 4
+            [event.target.name]: event.target.value
         })
     }
 
@@ -28,8 +26,7 @@ class BillInput extends Component {
             due_date: '',
             amount_due: '',
             notes: '',
-            paid_status: '',
-            id: 0
+            paid_status: ''
         })
     }
 

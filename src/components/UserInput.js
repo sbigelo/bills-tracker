@@ -17,7 +17,7 @@ class UserInput extends Component {
             [event.target.name]: event.target.value,
             bill_id: this.props.billId
         })
-        console.log('1')
+        console.log('a')
     }
 
     handleOnSubmit = (event) => {
@@ -27,6 +27,7 @@ class UserInput extends Component {
             first_name: '',
             last_name: ''
         })
+        console.log('a')
     }
 
 

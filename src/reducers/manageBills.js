@@ -15,6 +15,7 @@ export default function manageBills(state = { bills: [] }, action) {
                     return bill
                 }
             })
+            console.log('a')
             return { ...state, bills: [ ...bills] }
 
         case 'EDIT_BILL':
@@ -27,7 +28,8 @@ export default function manageBills(state = { bills: [] }, action) {
             })
             return { ...state, bills: editedBill }
 
-        case 'DELETE_USER':           
+        case 'DELETE_USER':  
+        console.log('x')         
             let allBills = state.bills.map(bill => {
                 if (bill.id === action.payload.id) { 
                     return action.payload
@@ -35,6 +37,7 @@ export default function manageBills(state = { bills: [] }, action) {
                     return bill
                 }
             })
+            console.log('x')
             return { ...state, bills: allBills }
 
         default:

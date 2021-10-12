@@ -8,18 +8,21 @@ class UserList extends Component {
 
     handleDelete = (user) => {
         this.props.deleteUser(user, user.bill_id)
+        console.log('x')
     }
 
     render() {
         const { users } = this.props
         const userCard = users != null && users.length > 0 ? users.map(user =>
             <UserCard key={user.id} user={user} handleDelete={() => this.handleDelete(user)}></UserCard>
-        ) : null
-        
+        ) : <Center>Add one below!</Center>
+        console.log('x')
+        const check = users != null && users.length != 1  
+        ? "s" : null
         return (
             <Grid>
             <UserHeader>
-                {users && users.length} Bill Payers: 
+                {users && users.length} Bill Payer{check}: 
             </UserHeader>
             {userCard}
             </Grid>
@@ -28,6 +31,10 @@ class UserList extends Component {
 }
 
 export default connect(null, { deleteUser })(UserList)
+
+const Center = styled.div`
+  text-align: center; 
+`
 
 const UserHeader = styled.div`
   text-align: center;

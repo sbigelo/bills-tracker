@@ -1,5 +1,6 @@
 export const deleteUser = (user) => {
     return (dispatch) => {
+        console.log('x')
         return fetch(`http://127.0.0.1:9393/bills/${user.bill_id}/users/${user.id}`, {
             method: 'DELETE'
         })
