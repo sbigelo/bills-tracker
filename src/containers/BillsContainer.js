@@ -27,7 +27,6 @@ class BillsContainer extends Component {
     componentDidMount() {
         this.props.fetchBills()
     }
-
     
 }
 

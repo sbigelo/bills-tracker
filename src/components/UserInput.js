@@ -17,19 +17,21 @@ class UserInput extends Component {
             [event.target.name]: event.target.value,
             bill_id: this.props.billId
         })
-        console.log('a')
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.addUser(this.state, this.props.bill.id)
+        if(this.state.first_name.length === 0) {
+            alert('First name cannot be blank.') 
+        } else if (this.state.last_name.length === 0) {
+            alert('Last name cannot be blank.')
+        }
         this.setState({
             first_name: '',
             last_name: ''
         })
-        console.log('a')
     }
-
 
     render() {
         return(

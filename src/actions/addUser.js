@@ -1,6 +1,5 @@
 export const addUser = (data) => {
     return (dispatch) => {
-        console.log('a')
         fetch(`http://127.0.0.1:9393/bills/${data.bill_id}/users`, {
             method: 'POST',
             headers: {
@@ -10,11 +9,8 @@ export const addUser = (data) => {
         })
             .then(resp => resp.json())
             .then(datas => {
-                    dispatch({ type: "ADD_USER", payload: datas })
+                dispatch({ type: "ADD_USER", payload: datas })
             })
-            .catch((err) => {
-                console.log(err);
-            })
-            console.log('a')
+
         }
 }

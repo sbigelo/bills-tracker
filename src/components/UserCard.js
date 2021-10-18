@@ -2,7 +2,6 @@ import React from 'react'
 import styled from "styled-components"
 
 const UserCard = ({user, handleDelete}) => {
-    console.log('x')
     return (
         <Card>
             <UserWrap>

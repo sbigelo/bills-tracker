@@ -8,7 +8,6 @@ class UserList extends Component {
 
     handleDelete = (user) => {
         this.props.deleteUser(user, user.bill_id)
-        console.log('x')
     }
 
     render() {
@@ -16,8 +15,7 @@ class UserList extends Component {
         const userCard = users != null && users.length > 0 ? users.map(user =>
             <UserCard key={user.id} user={user} handleDelete={() => this.handleDelete(user)}></UserCard>
         ) : <Center>Add one below!</Center>
-        console.log('x')
-        const check = users != null && users.length != 1  
+        const check = users != null && users.length !== 1  
         ? "s" : null
         return (
             <Grid>
