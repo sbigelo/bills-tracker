@@ -11,11 +11,10 @@ const Bills = (props) => {
             <Column>
                 <Main>
                     <h2>Company Name: {bill && bill.company_name}</h2>
-                    <p>Due date: {bill && bill.due_date}</p>
-                    <p>Amount Due: {bill && bill.amount_due}</p>
-                    <p>Paid Status: {bill && bill.paid_status}</p>
-                    <p>Notes: {bill && bill.notes}</p>
-                    
+                    <Box>Due date:</Box><p>{bill && bill.due_date}</p>
+                    <Box>Amount Due:</Box><p>{bill && bill.amount_due}</p>
+                    <Box>Paid Status:</Box><p>{bill && bill.paid_status}</p>
+                    <Box>Notes:</Box><p>{bill && bill.notes}</p>
                     {bill && <BillEdit bill={bill} /> }
                 </Main>
             </Column>
@@ -29,6 +28,11 @@ const Bills = (props) => {
 
 export default Bills
 
+const Box = styled.div`
+font-weight: bold;
+font-size: 18px;
+color: #213502;
+`
 
 const Wrap = styled.div`
   margin-left: auto;

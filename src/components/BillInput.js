@@ -9,7 +9,8 @@ class BillInput extends Component {
         due_date: '',
         amount_due: '',
         notes: '',
-        paid_status: ''
+        paid_status: 'Not Paid',
+        error: ''
     }
 
     handleOnChange = (event) => {
@@ -20,14 +21,20 @@ class BillInput extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
+        if(!this.state.company_name || !this.state.due_date || !this.state.amount_due || !this.state.notes || !this.state.paid_status) {
+            this.setState(() => ({error: "Please fill out the form entirely."}))
+        } else {
+        
         this.props.addBill(this.state)
         this.setState({
             company_name: '',
             due_date: '',
             amount_due: '',
             notes: '',
-            paid_status: ''
+            paid_status: '',
+            error: ''
         })
+        }
     }
 
     render() {
@@ -37,14 +44,15 @@ class BillInput extends Component {
                 <BillWrap >
                 <BillHeader>Create A New Bill</BillHeader>
                     <form onSubmit={this.handleOnSubmit}>
+                    {this.state.error && <Error><p>{this.state.error}</p></Error>}
                 <FormWrap>    
                             <input type="text" placeholder="Company Name" value={this.state.company_name} name="company_name" onChange={this.handleOnChange} />
                 </FormWrap>
                 <FormWrap>
-                            <input type="text" placeholder="Due Date" value={this.state.due_date} name="due_date" onChange={this.handleOnChange} />
+                            <input type="date" value={this.state.due_date} name="due_date" onChange={this.handleOnChange} />
                 </FormWrap>
                 <FormWrap>
-                            <input type="text" placeholder="Amount Due" value={this.state.amount_due} name="amount_due" onChange={this.handleOnChange} />
+                        <input  type="number" placeholder="Amount Due" value={this.state.amount_due} name="amount_due" onChange={this.handleOnChange} />
                 </FormWrap>
                 <FormWrap>    
                             <input type="text" placeholder="Paid Status" value={this.state.paid_status} name="paid_status" onChange={this.handleOnChange} />
@@ -63,6 +71,10 @@ class BillInput extends Component {
 }
 
 export default connect(null, { addBill })(BillInput)
+
+const Error = styled.div`
+color: red;
+`
 
 const BillHeader = styled.div`
   text-align: center;

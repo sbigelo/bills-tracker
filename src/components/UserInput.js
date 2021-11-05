@@ -9,7 +9,8 @@ class UserInput extends Component {
     state = {
         first_name: '',
         last_name: '',
-        bill_id: this.props.billId
+        bill_id: this.props.billId,
+        error: ''
     }
 
     handleOnChange = (event) => {
@@ -21,15 +22,15 @@ class UserInput extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
-        this.props.addUser(this.state, this.props.bill.id)
-        if(this.state.first_name.length === 0) {
-            alert('First name cannot be blank.') 
-        } else if (this.state.last_name.length === 0) {
-            alert('Last name cannot be blank.')
-        }
+       if(!this.state.first_name || !this.state.last_name) {
+           this.setState(() => ({error: "Please fill out both first and last name."}))
+       } else {
+           this.props.addUser(this.state, this.props.bill.id)
+       }
         this.setState({
             first_name: '',
-            last_name: ''
+            last_name: '',
+            error: ''
         })
     }
 
@@ -39,6 +40,7 @@ class UserInput extends Component {
                 <UserWrapper>
                 <form onSubmit={this.handleOnSubmit}>
                 <Wrap>
+                {this.state.error && <Error><p>{this.state.error}</p></Error>}
                 <input type="text" name="first_name" placeholder="First Name" value={this.state.first_name} onChange={this.handleOnChange}/>
                 </Wrap>
                 <Wrap>
@@ -66,7 +68,10 @@ const UserWrapper = styled.div`
   background: #fff;
   
 `
-
+const Error = styled.div`
+color: red;
+font-size: 14px;
+`
 
 const Wrap = styled.div`
   border-radius: 4px; 

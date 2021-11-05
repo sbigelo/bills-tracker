@@ -21,7 +21,7 @@ export default BillCard
 
 const LinkWrapper = styled.div`
   margin: 20px 0 20px 4;
-  height: 45px;
+  height: 66px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,6 +43,7 @@ const LinkWrapper = styled.div`
 `
 
 
+
 const TitleWrap = styled.div`
     padding: 10px 0 10px 0
 `
@@ -50,5 +51,9 @@ const TitleWrap = styled.div`
 const Card = styled.div`
   border: 3px solid #efefef;
   background: #fff;
-  text-align: center
+  text-align: center;
+ margin: auto;
+padding: 12px;
+max-width: 250px;
+min-width: 249px:
 `
