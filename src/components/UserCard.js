@@ -18,12 +18,11 @@ const UserCard = ({user, handleDelete}) => {
 export default UserCard
 
 const Card = styled.div`
-  border-radius: 20px;
+  border-radius: 200px;
   border: 1px solid #E6E6E6;
   padding: 20px;
-  margin: 0px 0px 20px 0px;
+  margin: 10px 10px 20px 10px;
   position: relative;
-  margin-right: 12px;
   background: white;
 `
 const UserWrap = styled.div`
@@ -42,7 +41,8 @@ const DeleteButton = styled.button`
   border-radius: 4px;   
   padding: flex;  
   border: 1px solid #71b406;
-  width: 100%;
+  width: 50%;
+  margin-left: 25%;
   font-size: 18px;
   cursor: pointer;
   transition: ease-in-out 0.2s;

@@ -37,7 +37,7 @@ const Center = styled.div`
 const UserHeader = styled.div`
   text-align: center;
   font-size:20px;
-  padding: 15px 0;
+  padding: 15px 0px;
   font-weight: bold;
   color: black;
 `
